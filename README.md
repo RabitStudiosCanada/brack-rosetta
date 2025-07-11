@@ -192,12 +192,12 @@ text
 - **Example**:  
   ```brack
   { (let [x 5]) (print (add [x 10])) }  // → 15
-
+```
 text
 
 
 ---
-
+```markdown
 #### **C. `examples/factorial.brack`** *(Demo File)*  
 ```brack
 {
