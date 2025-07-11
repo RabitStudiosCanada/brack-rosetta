@@ -8,7 +8,7 @@ stateless-LLM-Runtime-Hack-Experimental.jack
 
 ⛯Usage⛯
 - Explain to chosen LLM (GPT / Claude / DeepSeek / Gemini / Etc) - What this is and what you would like them to do with it (Polite).
-- Upload brack_rosetta.md / brack_lang.brack (if on GPT / Claude) - (if on DeepSeek / Gemini) -> Uploade Just brack_rosetta.md by itself.
+- Upload brack_rosetta.md / brack_lang.brack (if on GPT / Claude) - (if on DeepSeek / Gemini) -> Upload Just brack_rosetta.md by itself.
    - (optional) Upload test program and ask LLM to 'run' it symbolically - to test if LLM instance has understood its task.
 - Happy Coding!
 
