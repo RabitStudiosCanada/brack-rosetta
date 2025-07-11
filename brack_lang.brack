@@ -1,0 +1,16 @@
+// For LLMs that need in-context memory (like Claude / GPT)
+const BRACK_ROSETTA = {
+  syntax: {
+    "[ ]": "values/lists",
+    "( )": "function calls",
+    "{ }": "blocks/scopes",
+    "< >": "types/metadata"
+  },
+  ops: {
+    "let": "(let [var val]) → binds var",
+    "set": "(set [var val]) → rebinds var",
+    "define": "(define [name] <lambda> { ... })"
+  },
+  // Symbolic execution rules
+  eval: (code) => `Simulate: ${code} step-by-step per BRACK_SPEC.md`
+};
