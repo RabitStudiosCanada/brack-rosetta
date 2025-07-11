@@ -6,6 +6,11 @@ stateless-LLM-Runtime-Hack-Experimental.jack
 
 <img width="1024" height="1024" alt="Brack_logo" src="https://github.com/user-attachments/assets/94c81a3a-53fa-42d8-9c30-e9359b2a6ff3" />
 
+⛯Usage⛯
+- Explain to chosen LLM (GPT / Claude / DeepSeek / Gemini / Etc) - What this is and what you would like them to do with it (Polite).
+- Upload brack_rosetta.md / brack_lang.brack (if on GPT / Claude) - (if on DeepSeek / Gemini) -> Uploade Just brack_rosetta.md by itself.
+   - (optional) Upload test program and ask LLM to 'run' it symbolically - to test if LLM instance has understood its task.
+- Happy Coding!
 
 ## **What is Brack?**  
 Brack is a purely bracket-delimited language (`[]`, `()`, `{}`, `<>`) designed to explore **collaborative symbolic execution** with stateless LLMs.  
@@ -210,5 +215,5 @@ text
 }
 ```
 
-(CC BY 4.0) Rabit Studios - ⛯Lighthouse⛯ Research Group 
+(CC BY 4.0) Rabit Studios - ⛯Lighthouse⛯ Research Group  <----- We would love to know what you make with this - Please reach out! [Rabit's Warren Discord Channel: Join<https://discord.gg/8BuTBHtyac>]
 
