@@ -1,5 +1,5 @@
 # brack-rosetta
-stateless-LLM-Runtime-Hack-Expirimental.jack
+stateless-LLM-Runtime-Hack-Experimental.jack
 
 # Brack & The Rosetta Stone Protocol  
 *A minimalist, bracket-based language symbolically executed by LLMs.*  
