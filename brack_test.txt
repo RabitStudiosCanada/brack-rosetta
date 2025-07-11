@@ -1,3 +1,5 @@
+//Brack 'programs' should be saved as .txt for uploading as it is the easiest format for the LLM to read
+
 { 
   // --- Variable Declarations ---
   (let [numbers [1 2 3 4 5]])
