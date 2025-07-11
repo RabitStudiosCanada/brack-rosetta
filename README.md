@@ -19,3 +19,147 @@ Brack is a purely bracket-delimited language (`[]`, `()`, `{}`, `<>`) designed t
 1. **Run Symbolically**: Paste Brack code into an LLM (like DeepSeek Chat) with the [Rosetta Stone rules](docs/BRACK_SPEC.md).  
    ```brack
    { (print (add [1 2])) }
+
+________________________________________________________________________________________________________________________________________________________
+
+# **Brack Syntax Overview**
+
+**Language Philosophy:**
+
+* **All code is bracketed.**
+* **No bare words, no quotes.**
+* **Everything is a symbolic operation or structure.**
+* **Whitespace is ignored outside brackets.**
+
+---
+
+### **Bracket Meanings**
+
+| Bracket  | Symbol | Primary Use                        |
+| -------- | ------ | ---------------------------------- |
+| \[ ... ] | Square | Values & Lists                     |
+| ( ... )  | Round  | Function Calls / Operations        |
+| { ... }  | Curly  | Blocks / Scopes / Objects          |
+| < ... >  | Angle  | Types / Modifiers / Meta / Symbols |
+
+---
+
+## **SYNTAX EXAMPLES**
+
+### 1. **Values & Lists**
+
+* `[1 2 3]` — a list of numbers
+* `[true false true]` — booleans
+
+### 2. **Function Calls**
+
+* `(add [1 2])` — call `add` on list `[1 2]`
+* `(print [Hello World])` — print a list
+
+### 3. **Blocks/Objects**
+
+* `{ (let [x 5]) (let [y 10]) (add [x y]) }` — a block with two variables and an operation
+
+### 4. **Types/Meta**
+
+* `<int>` — type int
+* `<list<int>>` — list of ints
+* `<lambda>` — lambda/function
+
+---
+
+### **Putting It All Together**
+
+```brack
+{                   // Block (scope)
+  (let [x 5])       // Define x
+  (let [y 10])      // Define y
+  (print (add [x y]))
+}
+```
+
+---
+
+### **Defining Functions**
+
+```brack
+(define [add2]
+  <lambda>
+  { (let [x (arg 0)]) (let [y (arg 1)]) (add [x y]) }
+)
+```
+
+* `(define [add2] ...)` — defines a function
+* `<lambda>` — denotes it's a function
+* `(arg 0)` — gets argument 0
+
+---
+
+### **If/Else**
+
+```brack
+(if (gt [x 5])
+    { (print [Greater]) }
+    { (print [LesserOrEqual]) }
+)
+```
+
+---
+
+### **Looping**
+
+```brack
+(for [i [1 2 3 4]]
+    { (print [i]) }
+)
+```
+
+---
+
+### **Symbolic / Meta Programming**
+
+* `<symbol:add>` — symbol named "add"
+* `<meta:[compile-time]>` — meta info
+
+---
+
+## **Symbolic Power Moves**
+
+You can compose code by treating brackets as building blocks:
+
+* `[ (add [x y]) (sub [y x]) ]` — a list of operations
+* `{ ... }` blocks can be passed around as first-class citizens
+* `<...>` lets you build your own type system / meta logic
+
+---
+
+## **Sample Program (Hello, World!)**
+
+```brack
+{ (define [main] <lambda> { (print [Hello, World!]) }) (main) }
+```
+
+---
+
+## **Summary Table**
+
+| Concept      | Example Brack Syntax            |
+| ------------ | ------------------------------- |
+| List         | `[1 2 3]`                       |
+| Call         | `(add [1 2])`                   |
+| Block/Scope  | `{ ... }`                       |
+| Type/Meta    | `<int>` `<lambda>`              |
+| Function Def | `(define [f] <lambda> { ... })` |
+| If           | `(if ... { ... } { ... })`      |
+| For          | `(for [i xs] { ... })`          |
+
+---
+
+## **Final Thoughts**
+
+* **No strings:** everything is a bracketed symbol or value list (`[Hello World]` is a list of symbols, not a string)
+* **No operators:** use function calls like `(add [a b])`, `(gt [a b])`
+* **Compositional:** all structures are recursively bracketed
+
+(CC BY 4.0) Rabit Studios - ⛯Lighthouse⛯ Research Group 
+
