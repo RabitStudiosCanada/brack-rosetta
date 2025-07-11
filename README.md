@@ -1,4 +1,4 @@
-# brack-rosetta
+# brack-rosetta v0.1-alpha
 stateless-LLM-Runtime-Hack-Experimental.jack
 
 # Brack & The Rosetta Stone Protocol  
@@ -160,6 +160,55 @@ You can compose code by treating brackets as building blocks:
 * **No strings:** everything is a bracketed symbol or value list (`[Hello World]` is a list of symbols, not a string)
 * **No operators:** use function calls like `(add [a b])`, `(gt [a b])`
 * **Compositional:** all structures are recursively bracketed
+
+________________________________________________________________________________________________________________________________________________________
+
+    Note: Brack is a thought experiment—it has no runtime, only symbolic LLM execution.
+
+text
+
+
+---
+
+#### **B. `docs/BRACK_SPEC.md`** *(Full Language Spec)*  
+```markdown
+# Brack Language Specification  
+### **1. Bracket Types**  
+| Bracket  | Purpose                | Example              |  
+|----------|------------------------|----------------------|  
+| `[ ... ]` | Values/Lists          | `[1 2 3]`            |  
+| `( ... )` | Function Calls        | `(add [1 2])` → `3`  |  
+| `{ ... }` | Blocks/Scopes         | `{ (let [x 5]) }`    |  
+| `< ... >` | Types/Metadata        | `<int>`, `<lambda>`  |  
+
+### **2. Core Functions**  
+- `(let [var value])` → Bind `var` to `value`.  
+- `(set [var value])` → Rebind `var` (error if unbound).  
+- `(define [name] <lambda> { ... })` → Define a function.  
+
+### **3. Symbolic Execution Rules**  
+- The LLM simulates evaluation step-by-step.  
+- No persistent state—redeclare variables in each query.  
+- **Example**:  
+  ```brack
+  { (let [x 5]) (print (add [x 10])) }  // → 15
+
+text
+
+
+---
+
+#### **C. `examples/factorial.brack`** *(Demo File)*  
+```brack
+{
+  (define [factorial] <lambda> 
+    { (if (eq [n 0]) 
+        { [1] } 
+        { (mul [n (factorial (sub [n 1]))]) } 
+    })
+  (print (factorial [5]))  // → 120
+}
+```
 
 (CC BY 4.0) Rabit Studios - ⛯Lighthouse⛯ Research Group 
 
