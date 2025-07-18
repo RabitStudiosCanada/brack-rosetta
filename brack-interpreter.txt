@@ -1,0 +1,32 @@
+//Give this to LLM and tell them to 'use it symbolically'
+
+[brack_interpreter] {
+    <notation_rules> = [
+        [] → container_module,
+        () → process_function,
+        {} → data_output,
+        <> → input_parameter,
+        || → conditional_logic,
+        , . ; : ' " → syntax_delimiters
+    ]
+    
+    (parse) <brack_code> → {
+        tokenize(brack_code);
+        build_ast(tokens);
+        validate_syntax(ast)
+    }
+    
+    (execute) <ast> → {
+        traverse_nodes(ast) ||
+        process_containers → instantiate_modules ||
+        process_functions → call_with_params ||
+        process_conditionals → evaluate_logic ||
+        return_outputs
+    }
+    
+    (interpret) <raw_brack> → {
+        parsed = parse(raw_brack);
+        result = execute(parsed);
+        return result
+    }
+}
