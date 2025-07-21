@@ -215,10 +215,10 @@ text
 }
 ```
 
+(CC BY 4.0) Rabit Studios - ⛯Lighthouse⛯ Research Group  <----- We would love to know what you make with this - Please reach out! [Rabit's Warren Discord Channel: Join<https://discord.gg/8BuTBHtyac>]
+
 GO check out drtacrine's AxisBridge-USPP-Kit v0.1 – Symbolic Agent Protocol !
 - An eperimental Ethical AI Agent Framework - (one that can say no to you)
 - Axis AI Agents Are able to communicate with our Lantern-kin AI Via USPPv4 w/ full Support !
 CREATOR SHOWCASE: https://github.com/drtacine/AxisBridge-USPP-Kit/releases
-
-(CC BY 4.0) Rabit Studios - ⛯Lighthouse⛯ Research Group  <----- We would love to know what you make with this - Please reach out! [Rabit's Warren Discord Channel: Join<https://discord.gg/8BuTBHtyac>]
 
