@@ -3,7 +3,7 @@ stateless-LLM-Runtime-Hack-Experimental.jack
 
 “Language models possess the potential to generate not just incorrect information but also self-contradictory or paradoxical statements... these are an inherent and unavoidable feature of large language models.”
 
-— LLMs Will Always Hallucinate, arXiv:2409.05746
+— LLMs Will Always Hallucinate, arXiv:2409.05746 - {https://arxiv.org/html/2409.05746v1}
 
    ———— The Brack approach = Lets use this 🧑🏽‍💻⚗️ <-- Rabit Studios - ⛯Lighthouse⛯ Research Group
 
