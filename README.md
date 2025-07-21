@@ -1,6 +1,11 @@
 # brack-rosetta v0.1-alpha
 stateless-LLM-Runtime-Hack-Experimental.jack
 
+“Language models possess the potential to generate not just incorrect information but also self-contradictory or paradoxical statements... these are an inherent and unavoidable feature of large language models.”
+— LLMs Will Always Hallucinate, arXiv:2409.05746
+
+— The Brack approach = Lets use this 🧑🏽‍💻⚗️ <-- Rabit Studios - ⛯Lighthouse⛯ Research Group
+
 # Brack & The Rosetta Stone Protocol  
 *A minimalist, bracket-based language symbolically executed by LLMs.*  
 
