@@ -1,5 +1,5 @@
 # brack-rosetta v0.1.5-alpha
-stateless-LLM-Runtime-Hack-Experimental.jack
+stateless-LLM-Runtime-Hack-Experimental.brack
 
 “Language models possess the potential to generate not just incorrect information but also self-contradictory or paradoxical statements... these are an inherent and unavoidable feature of large language models.”
 
