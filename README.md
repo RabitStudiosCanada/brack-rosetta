@@ -21,10 +21,14 @@ stateless-LLM-Runtime-Hack-Experimental.jack
 ## **What is Brack?**  
 Brack is a purely bracket-delimited language (`[]`, `()`, `{}`, `<>`) designed to explore **collaborative symbolic execution** with stateless LLMs.  
 
-## **Key Features**  
-- **100% Brackets**: No bare words, no ambiguity.  
-- **LLM-Friendly**: Designed for Rosetta Stone-style interpretation.  
-- **Extensible**: Add your own bracket semantics.  
+## **Key Features**
+- **100% Brackets**: No bare words, no ambiguity.
+- **LLM-Friendly**: Designed for Rosetta Stone-style interpretation.
+- **Extensible**: Add your own bracket semantics.
+
+## **Formal Grammar & Validator**
+- The complete EBNF grammar lives in [`docs/GRAMMAR.md`](docs/GRAMMAR.md).
+- Validate Brack snippets locally with `python parser/grammar.py your_file.brack`.
 
 ## **Quick Start**  
 1. **Run Symbolically**: Paste Brack code into an LLM (like DeepSeek Chat) with the [Rosetta Stone rules](docs/BRACK_SPEC.md).  

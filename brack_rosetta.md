@@ -9,6 +9,8 @@
 ## **1. Overview**
 Brack is a minimalist, bracket-based language where syntax is defined entirely by nested brackets (`[]`, `()`, `{}`, `<>`). This document describes how to collaborate with an LLM to "execute" Brack code symbolically, despite the LLM having no persistent memory or traditional runtime.
 
+For a formal take on the syntax, consult the EBNF in [`docs/GRAMMAR.md`](docs/GRAMMAR.md). When you author new snippets you can lint them locally with `python parser/grammar.py your_file.brack` before handing them to an LLM.
+
 ### **Key Ideas**
 - **Rosetta Stone Principle:** The LLM acts as an interpreter by following a shared specification (this doc).
 - **Symbolic Execution:** No real computation occurs—the LLM simulates steps based on agreed-upon rules.
