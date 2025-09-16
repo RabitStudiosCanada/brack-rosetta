@@ -34,7 +34,7 @@ Brack is a purely bracket-delimited language (`[]`, `()`, `{}`, `<>`) designed t
 1. **Run Symbolically**: Paste Brack code into an LLM (like DeepSeek Chat) with the [Rosetta Stone rules](docs/BRACK_SPEC.md).  
    ```brack
    { (print (add [1 2])) }
-
+   ```
 ________________________________________________________________________________________________________________________________________________________
 
 # **Brack Syntax Overview**
