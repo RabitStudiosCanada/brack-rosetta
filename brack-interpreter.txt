@@ -12,8 +12,28 @@
     
     (parse) <brack_code> → {
         tokenize(brack_code);
+        annotate_type_tokens(tokens);
         build_ast(tokens);
-        validate_syntax(ast)
+        validate_syntax(ast);
+        register_type_annotations(ast)
+    }
+
+    (annotate_type_tokens) <tokens> → {
+        while tokens.has_next {
+            if tokens.peek == '<' {
+                type_token = capture_until('>');
+                label(type_token, type_annotation)
+            }
+            advance(tokens)
+        }
+    }
+
+    (register_type_annotations) <ast> → {
+        traverse_nodes(ast) {
+            if node.has_child(type_annotation) {
+                node.meta.expected_type = normalize_type(node.child(type_annotation))
+            }
+        }
     }
     
     (execute) <ast> → {
@@ -21,7 +41,93 @@
         process_containers → instantiate_modules ||
         process_functions → call_with_params ||
         process_conditionals → evaluate_logic ||
+        process_type_checks → enforce_expected_types ||
         return_outputs
+    }
+
+    (enforce_expected_types) <node> → {
+        if node.command == 'type-check' {
+            expr_value = evaluate(node.args[0]);
+            expected = resolve_expected_type(node.args[1]);
+            actual = infer_type(expr_value);
+            match_types(actual, expected) ?
+                emit([ok expected]) :
+                raise_type_error(expected, actual)
+        }
+    }
+
+    (resolve_expected_type) <type_expr> → {
+        if type_expr.is_metadata {
+            return normalize_type(type_expr)
+        }
+        if type_expr.references_symbol {
+            return lookup_type_symbol(type_expr)
+        }
+        raise_error('unknown-type-annotation', type_expr)
+    }
+
+    (normalize_type) <raw> → {
+        return canonicalize(raw) // ensures `<List<int>>` and `<list <int>>` share structure
+    }
+
+    (infer_type) <value> → {
+        if value.has_meta('type') {
+            return value.meta.type
+        }
+        if value.is_number && value.is_integer {
+            return '<int>'
+        }
+        if value.is_number {
+            return '<float>'
+        }
+        if value.is_boolean {
+            return '<bool>'
+        }
+        if value.is_string {
+            return '<string>'
+        }
+        if value.is_list {
+            element_types = dedupe(map(infer_type, value.items));
+            return element_types.size == 1 ? `<list ${element_types[0]}>` : `<list <any>>`
+        }
+        return '<any>'
+    }
+
+    (match_types) <actual expected> → {
+        if expected == '<any>' {
+            return true
+        }
+        if is_list_type(actual) && is_list_type(expected) {
+            return match_types(inner_list_type(actual), inner_list_type(expected))
+        }
+        return actual == expected
+    }
+
+    (is_list_type) <type_label> → {
+        return type_label.starts_with('<list')
+    }
+
+    (inner_list_type) <type_label> → {
+        return extract_between(type_label, '<list', '>')
+    }
+
+    (extract_between) <text start end> → {
+        sliced = text.remove_prefix(start);
+        return sliced.substring_until(end).trim()
+    }
+
+    (raise_type_error) <expected actual> → {
+        emit({error type-mismatch [expected expected] [actual actual]});
+        halt_current_branch()
+    }
+
+    (type-check) [expr annotated_type] → {
+        expr_value = evaluate(expr);
+        expected = resolve_expected_type(annotated_type);
+        actual = infer_type(expr_value);
+        match_types(actual, expected) ?
+            [ok expected] :
+            {error type-mismatch [expected expected] [actual actual]}
     }
     
     (interpret) <raw_brack> → {

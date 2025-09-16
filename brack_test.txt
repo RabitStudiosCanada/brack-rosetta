@@ -63,4 +63,9 @@
 
   // --- Symbolic Meta Example ---
   (print [MetaType of sum: <type-of sum>])
+
+  // --- Type Checking Demo ---
+  (type-check [sum <int>])
+  (type-check [squares <list <int>>])
+  (type-check ["unexpected" <bool>]) // expected to signal a type-mismatch error
 }
