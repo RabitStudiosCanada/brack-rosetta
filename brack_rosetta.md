@@ -33,6 +33,33 @@ For a formal take on the syntax, consult the EBNF in [`docs/GRAMMAR.md`](docs/GR
 - **`(define [name] <lambda> { ... })`** → Define a function.
 - **`(return [value])`** → Exit function with `value`.
 
+### **Type System Basics**
+Type metadata lives inside angle brackets. When the LLM encounters `<type>` tokens it should treat them as symbolic tags that describe the expected shape of nearby values.
+
+**Primitive tags**
+- `<int>` → Whole numbers (e.g., `0`, `42`, `-9`).
+- `<float>` → Decimal numbers (e.g., `3.14`, `-0.5`).
+- `<string>` → Text wrapped in quotes or bracketed atoms that represent text.
+- `<bool>` → Logical values (`true`, `false`).
+
+**Composite tags**
+- `<list <type>>` → Homogeneous lists (e.g., `<list <int>>` means "a list of integers").
+- `<tuple <type> <type> ...>` → Fixed-length heterogeneous groupings.
+- `<any>` → Explicitly states that any type is acceptable.
+
+### **`(type-check [expr <type>])`**
+- Evaluate or symbolically inspect `expr` in the current environment.
+- Infer the resulting type (or read previously declared metadata).
+- Compare it with `<type>`.
+  - **Match** → Return `[ok <type>]` and continue execution.
+  - **Mismatch** → Return `{error type-mismatch [expected <type>] [actual <inferred-type>]}` and halt or branch as the hosting program dictates.
+
+```brack
+(type-check [sum <int>])        // succeeds if `sum` resolves to an integer
+(type-check [numbers <list <int>>]) // ensures each member of `numbers` is an integer
+(type-check ["oops" <bool>])   // triggers type-mismatch feedback
+```
+
 ---
 
 ## **3. Example: Collaborative Interpretation**
