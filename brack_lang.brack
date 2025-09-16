@@ -1,4 +1,4 @@
-// For LLMs that need in-context memory (like Claude / GPT)
+// For LLMs that need in-context memory (like Claude [add .txt] / GPT)
 const BRACK_ROSETTA = {
   syntax: {
     "[ ]": "values/lists",
