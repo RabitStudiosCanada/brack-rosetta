@@ -12,5 +12,5 @@ const BRACK_ROSETTA = {
     "define": "(define [name] <lambda> { ... })"
   },
   // Symbolic execution rules
-  eval: (code) => `Simulate: ${code} step-by-step per BRACK_SPEC.md`
+  eval: (code) => `Simulate: ${code} step-by-step per brack_rosetta.md`
 };
