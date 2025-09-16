@@ -1,4 +1,4 @@
-//Brack 'programs' should be saved as .txt for uploading as it is the easiest format for the LLM to read
+//Brack 'programs' should be saved as .txt (if working with non GPT LLMs) for uploading as it is the easiest format for the LLM to read
 
 { 
   // --- Variable Declarations ---
