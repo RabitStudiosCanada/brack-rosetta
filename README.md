@@ -180,13 +180,10 @@ ________________________________________________________________________________
 
     Note: Brack is a thought experiment—it has no runtime, only symbolic LLM execution.
 
-text
-
-
 ---
 
 #### **B. `docs/BRACK_SPEC.md`** *(Full Language Spec)*  
-```markdown
+
 # Brack Language Specification  
 ### **1. Bracket Types**  
 | Bracket  | Purpose                | Example              |  
@@ -207,12 +204,9 @@ text
 - **Example**:  
   ```brack
   { (let [x 5]) (print (add [x 10])) }  // → 15
-```
-text
-
+   ```
 
 ---
-```markdown
 #### **C. `examples/factorial.brack`** *(Demo File)*  
 ```brack
 {
