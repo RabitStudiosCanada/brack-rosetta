@@ -5,7 +5,7 @@ stateless-LLM-Runtime-Hack-Experimental.brack
 
 — LLMs Will Always Hallucinate, arXiv:2409.05746 - { https://arxiv.org/html/2409.05746v1 }
 
-   ———— The Brack approach = Lets use this 🧑🏽‍💻⚗️ <-- Rabit Studios - ⛯Lighthouse⛯ Research Group
+— The Brack approach = Lets use this 🧑🏽‍💻⚗️: "Have the model hallucinate 'running' code, give it syntax to do so accurately/consistently" 
 
 # Brack & The Rosetta Stone Protocol  
 *A minimalist, bracket-based language symbolically executed by LLMs.*  
