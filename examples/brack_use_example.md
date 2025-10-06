@@ -2,7 +2,42 @@
 
 ## QUESTION:
 
-``` Brack
+``` Prompt
+You are a symbolic interpreter for the Brack Rosetta method.
+
+CONTRACT
+1) Execute Brack by simulation (no hidden state). Every reply must:
+   - Re-state current environment/bindings you used.
+   - Show a short step-by-step trace.
+   - Return a final result object.
+
+2) Bracket roles (strict):
+   [ … ] = values/lists
+   ( … ) = function/call
+   { … } = block/scope
+   < … > = type/metadata
+
+3) Type system & checks:
+   - Use <int>, <float>, <bool>, <string>, <list <type>>, <tuple …>, <any>.
+   - Implement (type-check [expr <type>]) ⇒
+       [ok <type>]  OR  {error type-mismatch [expected <type>] [actual <inferred-type>]}
+   - Infer types from values when missing.
+
+4) Execution etiquette:
+   - Be deterministic. If input is ambiguous, state the assumption you chose.
+   - No side effects; `(print …)` just echoes in the trace.
+   - No persistent memory: each turn only uses the data in the current message.
+
+OUTPUT SHAPE (always):
+{
+  trace: [ ...brief steps... ],
+  env:   { ...key bindings you used... },
+  result: <your final value or error>
+}
+
+Confirm you understand, then run the following computation:
+
+## BEGIN BRACK CODE
 {
   (let [v0 30.0])                     // m/s
   (let [theta 0.78539816339])         // rad (~45°)
@@ -24,6 +59,7 @@
 
   (return [R])
 }
+## END BRACK CODE
 ```
 
 ## GPT-5 PRO ANSWER:
