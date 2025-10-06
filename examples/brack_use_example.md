@@ -126,6 +126,48 @@ I ensured accurate representation of results, maintained proper JSON formatting,
 "result": [91.77445916801355]
 }
 ```
+
+---
+
+## Line‑by‑line, in everyday terms
+
+**1) Set the knowns**
+
+```v0 = 30.0 → “Initial speed of the kick is 30 m/s (~67 mph).”```
+
+```theta = 0.785398… → “Launch angle is about 45°.”```
+
+```g = 9.80665 → “Gravity’s pull on Earth.”```
+
+```(Optional) Units tag```
+
+```U = <tuple <m> <s> <kg>> → “A reminder of the kinds of units we care about (meters, seconds, kilograms). It’s a label, not used in the math here.”```
+
+**2) Work the standard range formula**
+
+*The textbook rule for ideal projectile range is*
+```Range = (launch speed)² × sin(2 × angle) ÷ gravity```
+
+```two_theta = 2 × theta → “Double the angle because the formula needs 2θ.”```
+
+```sin2theta = sin(two_theta) → “Take the sine of that doubled angle.”```
+
+```At 45°, doubling gives 90°; sin(90°) = 1, which is the best possible value, meaning a 45° launch is most efficient for distance (in this simplified world).```
+
+```num = (v0 × v0) × sin2theta → “Square the speed, then apply the angle efficiency.”```
+
+```R = num ÷ g → “Divide by gravity to get the range.”```
+
+**3) Sanity checks**
+
+*The (type-check …) lines just confirm everything is a decimal number (a “float”). Think of them as “did we accidentally pass a word where a number should be?” guards.*
+
+**4) Return the answer**
+
+*It hands back the computed range R.*
+
+---
+
 ## Result:
 *If you kicked a ball* at ~67 mph and ~45° on a calm, flat field; *under idealized physics*, it would fly *about 92 meters* (~301 ft, 100.4 yd) before touching down.
 ---
