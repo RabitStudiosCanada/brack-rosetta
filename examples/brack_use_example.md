@@ -62,6 +62,8 @@ Confirm you understand, then run the following computation:
 }
 ## END BRACK CODE
 ```
+**NOTE:** you may replace the brack code (between ```## BEGIN BRACK CODE``` & ```## END BRACK CODE```) in the above prompt with any computation you would like to run
+
 ---
 
 ## Real‑world picture: a level‑field kick
