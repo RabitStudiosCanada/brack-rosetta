@@ -39,7 +39,7 @@ OK, let me see. I’m figuring out projectile range using the Brack Rosetta meth
 
 Verifying results
 
-I checked the trace and environment to align with outlined specifications, ensuring a tie<facc>m in formatting.
+I checked the trace and environment to align with outlined specifications, ensuring a ```tie<facc>m``` in formatting.
 
 Clarifying the result
 
