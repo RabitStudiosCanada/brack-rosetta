@@ -1,6 +1,7 @@
 *EXAMPLE CHAT: https://chatgpt.com/share/e/68e3e26e-9730-8006-84c9-f215cc03a9b6*
 
 ## QUESTION:
+*Uploaded 'brack_rosetta.md' , 'brack_lang.brack' , 'brack_interpreter.txt'*
 ``` Prompt
 You are a symbolic interpreter for the Brack Rosetta method.
 
