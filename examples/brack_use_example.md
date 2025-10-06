@@ -1,7 +1,6 @@
 *EXAMPLE CHAT: https://chatgpt.com/share/e/68e3e26e-9730-8006-84c9-f215cc03a9b6*
 
 ## QUESTION:
-
 ``` Prompt
 You are a symbolic interpreter for the Brack Rosetta method.
 
@@ -61,6 +60,16 @@ Confirm you understand, then run the following computation:
 }
 ## END BRACK CODE
 ```
+---
+
+## Real‑world picture: a level‑field kick
+
+Imagine you’re on a flat soccer field with no wind. You kick the ball at about 67 mph (that’s what v0 = 30.0 meters/second means) and you aim it at roughly 45° (theta ≈ 0.785… radians is just another way to say 45°). The code answers one question:
+
+*How far will the ball travel along the ground before it lands?
+(assuming level ground, same launch and landing height, and no air resistance)*
+
+---
 
 ## GPT-5 PRO ANSWER:
 
@@ -117,13 +126,6 @@ I ensured accurate representation of results, maintained proper JSON formatting,
 "result": [91.77445916801355]
 }
 ```
-
-## Real‑world picture: a level‑field kick
-
-Imagine you’re on a flat soccer field with no wind. You kick the ball at about 67 mph (that’s what v0 = 30.0 meters/second means) and you aim it at roughly 45° (theta ≈ 0.785… radians is just another way to say 45°). The code answers one question:
-
-*How far will the ball travel along the ground before it lands?
-(assuming level ground, same launch and landing height, and no air resistance)*
-
 ## Result:
-**If you kicked a ball** at ~67 mph and ~45° on a calm, flat field; *under idealized physics*, it would fly **about 92 meters** (~301 ft, 100.4 yd) before touching down.
+*If you kicked a ball* at ~67 mph and ~45° on a calm, flat field; *under idealized physics*, it would fly *about 92 meters* (~301 ft, 100.4 yd) before touching down.
+---
