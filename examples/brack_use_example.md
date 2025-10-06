@@ -2,7 +2,7 @@
 
 ## QUESTION:
 
-```
+``` Brack
 {
   (let [v0 30.0])                     // m/s
   (let [theta 0.78539816339])         // rad (~45°)
@@ -50,7 +50,7 @@ Clarifying the trace
 I ensured accurate representation of results, maintained proper JSON formatting, and avoided unnecessary details like step verifying difficulty or dimension mentions. >
 
 **RESPONSE:**
-```
+``` Brack
 {
 "trace": [
 "confirm: understood; executing stateless Brack block",
